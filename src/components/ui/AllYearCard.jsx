@@ -35,19 +35,22 @@ export const AllYearCard = () => {
   const notes = branchNotes[selectedBranch] || [];
 
   return (
-    <div className='flex flex-col rounded-lg bg-red-300 p-5'>
+    <div className='flex flex-col rounded-lg bg-indigo-900  p-5'>
       <Select className="m-5" onValueChange={setSelectedBranch}>
-        <SelectTrigger className="w-[180px] bg-slate-500">
+        <SelectTrigger className="w-[180px] bg-slate-500  border-0 ">
           <SelectValue placeholder="Select Branch" />
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="Civil">Civil</SelectItem>
           <SelectItem value="Mechanical">Mechanical</SelectItem>
           <SelectItem value="Electrical">Electrical</SelectItem>
+          <SelectItem value="Civil">Civil</SelectItem>
+          <SelectItem value="Mechanical">Mechanical</SelectItem>
+          <SelectItem value="Electrical">Electrical</SelectItem>
         </SelectContent>
       </Select>
 
-      <ScrollArea className="h-[200px] rounded-md border border-gray-300 w-full">
+      <ScrollArea className="h-[200px] rounded-md  w-full">
         {notes.map((note, index) => (
           <DownloadNotesBar key={index} subject={note.subject} link={note.link} />
         ))}

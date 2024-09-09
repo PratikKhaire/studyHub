@@ -3,7 +3,7 @@ import { LiaDownloadSolid } from "react-icons/lia";
 
 export const DownloadNotesBar = ({ subject, link }) => {
   return (
-    <div className='flex flex-wrap justify-between items-center text-black p-4 shadow shadow-red-400'>
+    <div className='flex flex-wrap justify-between w-full text-black p-4 m-0 shadow shadow-indigo-700 bg-indigo-300'>
       <div className="font-medium">{subject}</div>
       
       {/* Show download link on desktop (sm and larger) */}
