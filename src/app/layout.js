@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
       <link rel="icon" href="/logo.png" />
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body>

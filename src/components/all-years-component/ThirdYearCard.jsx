@@ -92,12 +92,12 @@ export const ThirdYearCard = () => {
   ];
 
   return (
-    <div className='flex flex-col rounded-lg bg-indigo-900 p-5'>
+    <div className='flex flex-col rounded-lg bg-slate-800 p-5'>
       <Select className="m-5" onValueChange={setSelectedBranch}>
-        <SelectTrigger className="w-[180px] bg-indigo-600 text-white border-0 mb-4">
+        <SelectTrigger className="w-[180px] bg-slate-600 text-white border-0 mb-4">
           <SelectValue placeholder="Select Branch" />
         </SelectTrigger>
-        <SelectContent className="bg-indigo-700 text-white border-none">
+        <SelectContent className="bg-slate-700 text-white border-none">
           <SelectItem value="BME">BME</SelectItem>
           <SelectItem value="CIVIL">CIVIL</SelectItem>
           <SelectItem value="CSE">CSE</SelectItem>
