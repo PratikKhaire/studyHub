@@ -8,10 +8,10 @@ import { Footer } from "@/components/Footer"; // Import the Footer component
 
 export default function Home() {
   return (
-    <div className="bg-slate-950 min-h-screen flex flex-col font-poppins">
-      <header className="bg-indigo-900 text-white font-poppins w-full flex items-center justify-between p-3 shadow-md">
+    <div className="bg-gradient-to-r from-slate-950 to-indigo-950  min-h-screen flex flex-col font-poppins">
+      <header className="bg-slate-950 text-white font-poppins w-full flex items-center justify-between p-3 shadow-md">
         <SideBar />
-        <div className="text-2xl font-bold text-slate-100">SGSITS NOTES</div>
+        <div className="text-2xl font-bold text-indigo-500">SGSITS NOTES</div>
         <a href="https://www.linkedin.com/in/shridmishra" target="_blank" rel="no opener no referrer">
         <img src="/person.png"  className="h-7 filter invert brightness-100 saturate-0" alt="Person" />
         </a>

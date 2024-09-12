@@ -15,13 +15,13 @@ export const SideBar = () => {
     };
 
     return (
-        <div className="relative lg:hidden">
+        <div className="relative">
             {/* Sidebar Toggle Button */}
             <button
                 onClick={toggleSidebar}
                 aria-controls="default-sidebar"
                 type="button"
-                className="inline-flex items-center p-2 text-white bg-indigo-800 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="inline-flex items-center p-2 text-white bg-indigo-950 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
                 <span className="sr-only">Open sidebar</span>
                 <svg
@@ -46,7 +46,7 @@ export const SideBar = () => {
                 aria-label="Sidebar"
             >
                 <div className="h-full px-3 py-4 overflow-y-auto">
-                    {/* Sidebar Toggle Button Inside Sidebar */}
+                    {/* Sidebar Close Button */}
                     <button
                         onClick={toggleSidebar}
                         aria-controls="default-sidebar"
