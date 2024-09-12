@@ -12,14 +12,14 @@ export const Footer = () => {
           Your notes can be a valuable resource for your peers. Submit your notes to help others succeed!
         </p>
         <a
-          href="#submit-notes"
+          href="https://drive.google.com/drive/folders/1IMh4elb-RYv5M8GpQrJaVQZLZyI2w4uY"
           className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300"
         >
           Submit Your Notes
         </a>
         <div className="mt-16 text-md mb-6">
           <p>
-            Designed & Developed by{" "}
+            Designed & Developed By <br />{" "}
             <a
               href="https://www.linkedin.com/in/shridmishra" // Replace with actual LinkedIn profile URL
               target="_blank"

@@ -10,18 +10,16 @@ export const Intro = () => {
         <p className="text-xl sm:text-2xl text-slate-300 mb-8">
         Your go-to platform for <strong> semester notes</strong>, study materials, and more!
         </p>
+        
+      
         <a
-          href="#first-year"
-          className="bg-indigo-600 hover:bg-indigo-700 mx-4  text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300"
-        >
-        Download Notes
-        </a>
-        <a
-          href="#submit-notes"
+          href="https://drive.google.com/drive/folders/1IMh4elb-RYv5M8GpQrJaVQZLZyI2w4uY"
           className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300"
         >
           Submit Your Notes
         </a>
+        
+       
       </div>
     </section>
   );

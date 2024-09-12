@@ -28,24 +28,26 @@ export const FirstYearCard = () => {
 
         {/* Tab content for Physics Sem */}
         <TabsContent value="physics" className="mt-0">
-          <ScrollArea className="h-[200px] rounded-md w-full rounded-t-sm">
-            <DownloadNotesBar subject="Physics" link="Download" />
+          <ScrollArea className="h-[220px] rounded-md w-full rounded-t-sm">
+            <DownloadNotesBar subject="Physics" link="https://drive.google.com/file/d/1IF3MjZdbcn8zmV7o-bYRz0go7HB5vAKT/view" />
             <DownloadNotesBar subject="Mathematics I " link="Download" />
             <DownloadNotesBar subject="Electrical Engineering" link="Download" />
             <DownloadNotesBar subject="Engineering Mechanics" link="Download" />
-            <DownloadNotesBar subject="Programming for Problem Solving" link="Download" />
-            <DownloadNotesBar subject="Workshop Practices" link="Download" />
+            
+             <DownloadNotesBar subject="Engineering Graphics" link="Download" />
           </ScrollArea>
         </TabsContent>
 
         {/* Tab content for Chemistry Sem */}
         <TabsContent value="chemistry" className="mt-0">
           <ScrollArea className="h-[220px] w-[350px] rounded-md w-full rounded-t-sm">
-            <DownloadNotesBar subject="Chemistry" link="Download" />
+            <DownloadNotesBar subject="Chemistry" link="https://drive.google.com/file/d/1NruwnuuNiJJfPuCunFYO7dTSyUvLMr03/view?usp=drive_link" />
             <DownloadNotesBar subject="Mathematics II " link="Download" />
-            <DownloadNotesBar subject="Environmental Science" link="Download" />
-            <DownloadNotesBar subject="Engineering Graphics" link="Download" />
-            <DownloadNotesBar subject="Communication Skills" link="Download" />
+            <DownloadNotesBar subject="Chem Lab" link="Download" />
+            <DownloadNotesBar subject="C Programming" link="https://drive.google.com/file/d/1oyGYqwVTkQGFbAAoE-ptiIW5bGHAL4MM/view" />
+            <DownloadNotesBar subject="Technical English" link="https://drive.google.com/file/d/1zypKzAPSXVlwJl0XCP_ItrR0WlbTyNOb/view?usp=drive_link" />
+            <DownloadNotesBar subject="Basic Electronics " link="https://drive.google.com/file/d/1YsWXZjQYy-uKCd9DubliV9eVsTPhjtC5/view" />
+            <DownloadNotesBar subject="IP Workshop" link="Download" />
           </ScrollArea>
         </TabsContent>
       </Tabs>
