@@ -89,24 +89,7 @@ export const SideBar = () => {
                                 <span className="ms-3">Second Year</span>
                             </a>
                         </li>
-                        <li>
-                            <a
-                                href="#third-year"
-                                onClick={handleLinkClick}
-                                className="flex items-center p-2 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700"
-                            >
-                                <span className="ms-3">Third Year</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#final-year"
-                                onClick={handleLinkClick}
-                                className="flex items-center p-2 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700"
-                            >
-                                <span className="ms-3">Final Year</span>
-                            </a>
-                        </li>
+                       
                     </ul>
                 </div>
             </aside>

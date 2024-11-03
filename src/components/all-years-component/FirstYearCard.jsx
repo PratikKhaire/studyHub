@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export const FirstYearCard = () => {
   return (
-    <div className='flex flex-col rounded-lg bg-slate-800 p-4'>
+    <div className='flex flex-col rounded-lg bg-gray-900 p-4'>
       <Tabs defaultValue="physics" className="w-full">
         <TabsList className="bg-slate-500 text-white w-full lg:max-w-lg p-0 rounded-b-none">
           <TabsTrigger 
@@ -28,7 +28,7 @@ export const FirstYearCard = () => {
 
         {/* Tab content for Physics Sem */}
         <TabsContent value="physics" className="mt-0">
-          <ScrollArea className="h-[220px] rounded-md w-full rounded-t-sm">
+          <ScrollArea className="h-[440px] rounded-md w-full rounded-t-sm">
             <DownloadNotesBar subject="Physics" link="https://drive.google.com/file/d/1IF3MjZdbcn8zmV7o-bYRz0go7HB5vAKT/view" />
             <DownloadNotesBar subject="Mathematics I " link="Download" />
             <DownloadNotesBar subject="Electrical Engineering" link="Download" />
@@ -40,7 +40,7 @@ export const FirstYearCard = () => {
 
         {/* Tab content for Chemistry Sem */}
         <TabsContent value="chemistry" className="mt-0">
-          <ScrollArea className="h-[220px] w-[350px] rounded-md w-full rounded-t-sm">
+          <ScrollArea className="h-full rounded-md w-full rounded-t-sm">
             <DownloadNotesBar subject="Chemistry" link="https://drive.google.com/file/d/1NruwnuuNiJJfPuCunFYO7dTSyUvLMr03/view?usp=drive_link" />
             <DownloadNotesBar subject="Mathematics II " link="Download" />
             <DownloadNotesBar subject="Chem Lab" link="Download" />

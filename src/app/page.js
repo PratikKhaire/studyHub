@@ -1,3 +1,4 @@
+
 import React from "react";
 import { FirstYear } from "../components/all-years-component/FirstYear";
 import { Intro } from "@/components/Intro";
@@ -5,24 +6,15 @@ import { AllYear } from "../components/all-years-component/AllYear";
 import { SideBar } from "@/components/SideBar";
 import { CiSearch } from "react-icons/ci";
 import { Footer } from "@/components/Footer"; // Import the Footer component
+import { NavBar } from "@/components/NavBar";
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-r from-slate-950 to-indigo-950  min-h-screen flex flex-col font-poppins">
-      <header className="bg-slate-950 text-white font-poppins w-full flex items-center justify-between p-3 shadow-md">
-        <SideBar />
-        <div className="text-2xl font-bold text-indigo-500">SGSITS NOTES</div>
-        <a href="https://www.linkedin.com/in/shridmishra" target="_blank" rel="no opener no referrer">
-        <img src="/person.png"  className="h-7 filter invert brightness-100 saturate-0" alt="Person" />
-        </a>
-      </header>
-
+    <div className=" min-h-screen bg-black flex flex-col font-poppins px-4 lg:px-28"> 
+      <NavBar/>
       <Intro />
       <FirstYear id="first-year" />
-      <AllYear year="Second" id="second-year" />
-      <AllYear year="Third" id="third-year" />
-      <AllYear year="Final" id="final-year" />
-      
+      <AllYear year="Second" id="second-year" /> 
       <Footer />
     </div>
   );

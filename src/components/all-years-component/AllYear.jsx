@@ -10,7 +10,7 @@ export const AllYear = ({ year,id }) => {
     "Third": <ThirdYearCard />,
     "Final": <FinalYearCard />
   };
-
+// tu use all year change at home
   
   const SelectedYearCard = yearComponents[year] || null;
 
