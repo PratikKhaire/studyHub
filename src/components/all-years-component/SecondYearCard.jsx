@@ -106,28 +106,35 @@ export const SecondYearCard = () => {
   ];
 
   return (
-    <div className='flex flex-col rounded-lg bg-slate-800 p-5'>
-      <Select className="m-5" onValueChange={setSelectedBranch}>
-        <SelectTrigger className="w-[180px] bg-slate-600 text-white border-0 mb-4">
-          <SelectValue placeholder="Select Branch" />
-        </SelectTrigger>
-        <SelectContent className="bg-slate-700 text-white border-none">
-        <SelectItem value="BME">BME</SelectItem>
-        <SelectItem value="CIVIL">CIVIL</SelectItem>
-        <SelectItem value="CSE">CSE</SelectItem>
-        <SelectItem value="ECE">ECE</SelectItem>
-        <SelectItem value="EE">EE</SelectItem>
-        <SelectItem value="IPE">IPE</SelectItem>
-        <SelectItem value="IT">IT</SelectItem>
-        <SelectItem value="ME">ME</SelectItem>
+    <div className="flex flex-col bg-zinc-950 p-6 shadow-xl">
+      <div className="flex items-center gap-2 mb-6">
+        <h2 className="text-xl font-semibold text-gray-200">Second Year Notes</h2>
+      </div>
 
+      <Select onValueChange={setSelectedBranch}>
+        <SelectTrigger className="w-[180px] bg-black text-gray-200 border-zinc-800 hover:bg-zinc-900 mb-4">
+          <SelectValue placeholder="Select Branch" />
+          
+        </SelectTrigger>
+        <SelectContent className="bg-black border-zinc-800">
+          {["BME", "CIVIL", "CSE", "ECE", "EE", "IPE", "IT", "ME"].map((branch) => (
+            <SelectItem 
+              key={branch} 
+              value={branch}
+              className="text-gray-200 hover:bg-zinc-900 focus:bg-zinc-900 focus:text-blue-500"
+            >
+              {branch}
+            </SelectItem>
+          ))}
         </SelectContent>
       </Select>
 
-      <ScrollArea className="h-[220px] rounded-md w-full">
-        {notes.map((note, index) => (
-          <DownloadNotesBar key={index} subject={note.subject} link={note.link} />
-        ))}
+      <ScrollArea className="h-[300px] rounded-lg">
+        <div className="space-y-2 pr-4">
+          {notes.map((note, index) => (
+            <DownloadNotesBar key={index} subject={note.subject} link={note.link} />
+          ))}
+        </div>
       </ScrollArea>
     </div>
   );

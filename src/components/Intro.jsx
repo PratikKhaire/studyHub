@@ -9,9 +9,7 @@ export const Intro = () => {
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-4">
               <div className="font-medium text-xl sm:text-2xl text-gray-300 tracking-tighter 
-                            relative inline-block
-                            after:content-[''] after:absolute after:-bottom-2 after:left-0 
-                            after:w-full after:h-1 after:bg-gradient-to-r after:from-blue-500 after:to-transparent">
+                            relative inline-block">
                 Welcome To
               </div>
               <h1 className="font-bold text-5xl sm:text-6xl md:text-7xl xl:text-8xl text-gray-50 leading-tight">
