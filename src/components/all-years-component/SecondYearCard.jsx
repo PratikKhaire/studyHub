@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { DownloadNotesBar } from '../ui/DownloadNotesBar'; // Adjust the path if necessary
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -13,6 +13,7 @@ import {
 
 export const SecondYearCard = () => {
   const [selectedBranch, setSelectedBranch] = useState("");
+  const [showAll, setShowAll] = useState(false);
 
   // Define notes for 2nd-year subjects for each branch
   const branchNotes = {
@@ -105,18 +106,21 @@ export const SecondYearCard = () => {
     ...branchNotes.Common,
   ];
 
+  const displayedNotes = showAll ? notes : notes.slice(0, 7);
+
   return (
-    <div className="flex flex-col bg-zinc-950 p-6 shadow-xl">
+    <div className="flex flex-col bg-zinc-950 p-6 shadow-xl rounded-xl border border-zinc-800/50">
       <div className="flex items-center gap-2 mb-6">
-        <h2 className="text-xl font-semibold text-gray-200">Second Year Notes</h2>
+        <h2 className="text-xl font-semibold text-gray-200 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+          Second Year Notes
+        </h2>
       </div>
 
       <Select onValueChange={setSelectedBranch}>
-        <SelectTrigger className="w-[180px] bg-black text-gray-200 border-zinc-800 hover:bg-zinc-900 mb-4">
+        <SelectTrigger className="w-[180px] bg-black/50 text-gray-200 border-zinc-800 hover:bg-zinc-900 mb-4 backdrop-blur-sm transition-all duration-300 hover:border-blue-500/50">
           <SelectValue placeholder="Select Branch" />
-          
         </SelectTrigger>
-        <SelectContent className="bg-black border-zinc-800">
+        <SelectContent className="bg-black/90 backdrop-blur-md border-zinc-800">
           {["BME", "CIVIL", "CSE", "ECE", "EE", "IPE", "IT", "ME"].map((branch) => (
             <SelectItem 
               key={branch} 
@@ -129,13 +133,35 @@ export const SecondYearCard = () => {
         </SelectContent>
       </Select>
 
-      <ScrollArea className="h-[300px] rounded-lg">
-        <div className="space-y-2 pr-4">
-          {notes.map((note, index) => (
-            <DownloadNotesBar key={index} subject={note.subject} link={note.link} />
-          ))}
-        </div>
-      </ScrollArea>
+      <div className="space-y-2 transition-all duration-300">
+        {displayedNotes.map((note, index) => (
+          <div 
+            key={index}
+            className="transform transition-all duration-300 hover:scale-[1.01]"
+          >
+            <DownloadNotesBar subject={note.subject} link={note.link} />
+          </div>
+        ))}
+      </div>
+
+      {notes.length > 7 && (
+        <button 
+          onClick={() => setShowAll(!showAll)}
+          className="mt-6 text-gray-200 hover:text-blue-400 flex items-center gap-2 mx-auto py-2 px-4 rounded-lg
+          bg-gradient-to-r from-blue-500/10 to-purple-500/10 hover:from-blue-500/20 hover:to-purple-500/20
+          border border-zinc-800 transition-all duration-300 hover:border-blue-500/50"
+        >
+          {showAll ? (
+            <>
+              Show Less <ChevronUp className="h-4 w-4" />
+            </>
+          ) : (
+            <>
+              View All <ChevronDown className="h-4 w-4" />
+            </>
+          )}
+        </button>
+      )}
     </div>
   );
 };

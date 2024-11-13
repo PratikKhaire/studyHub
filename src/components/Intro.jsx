@@ -1,199 +1,213 @@
+"use client"
 import React from "react";
+import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export const Intro = () => {
+  const mathSymbols = ["∑", "∫", "π", "√", "∞", "θ", "±", "÷"];
+  const chemSymbols = ["H₂O", "CO₂", "NaCl", "O₂", "H⁺", "OH⁻", "CH₄"];
+  
   return (
-    <section className=" bg-black text-indigo-200 px-4 sm:px-6 lg:px-8 flex items-center">
-      <div className="max-w-7xl mx-auto w-full py-12 sm:py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+    <section className="min-h-screen bg-gradient-to-b from-black via-black/95 to-blue-950/20 text-indigo-200 px-4 sm:px-6 lg:px-8 flex items-center relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-[500px] h-[500px] -top-48 -right-48 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute w-[400px] h-[400px] -bottom-32 -left-32 bg-indigo-500/10 rounded-full blur-3xl animate-pulse" />
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full py-12 sm:py-16 lg:py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           {/* Content Column */}
-          <div className="space-y-8 text-center lg:text-left">
-            <div className="space-y-4">
-              <div className="font-medium text-xl sm:text-2xl text-gray-300 tracking-tighter 
-                            relative inline-block">
-                Welcome To
-              </div>
-              <h1 className="font-bold text-5xl sm:text-6xl md:text-7xl xl:text-8xl text-gray-50 leading-tight">
-                <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500 bg-clip-text text-transparent
-                              animate-gradient-x">
-                  GS{" "}
-                </span>
-                <span className="relative">
-                  Notes.
-                  <span className="absolute -bottom-2 right-0 text-blue-500 text-6xl"></span>
-                </span>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-10 text-center lg:text-left"
+          >
+            <div className="space-y-6">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="inline-flex items-center px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-sm"
+              >
+                <span className="w-2 h-2 rounded-full bg-blue-500 mr-2 animate-pulse" />
+                <span className="text-sm font-medium text-blue-300">Welcome to GS Notes</span>
+              </motion.div>
+              
+              <h1 className="font-bold text-6xl sm:text-7xl md:text-8xl xl:text-9xl tracking-tight">
+                <motion.span 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-400"
+                >
+                  Study
+                </motion.span>
+                <motion.span 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                  className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600"
+                >
+                  Smarter.
+                </motion.span>
               </h1>
-              <div className="text-lg sm:text-xl font-light text-gray-400 max-w-xl mx-auto lg:mx-0">
-                Your go-to platform for semester notes, study materials,
-                <br className="hidden sm:block" />
-                Books, PYQs and lectures youtube links!
-              </div>
+
+              <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.9 }}
+                className="text-lg sm:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              >
+                Access comprehensive semester notes, study materials, books, previous year questions, and curated lecture links - all in one place.
+              </motion.p>
             </div>
             
-            <a
-              href="https://drive.google.com/drive/folders/1IMh4elb-RYv5M8GpQrJaVQZLZyI2w4uY"
-              className="inline-flex items-center px-4 py-2 lg:px-8 lg:py-4 rounded-xl
-                        bg-gradient-to-r from-blue-600 to-blue-800 
-                        hover:from-blue-500 hover:to-blue-700
-                        text-white font-semibold text-lg
-                        transform transition-all duration-300
-                        hover:scale-105 hover:shadow-xl
-                        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-            >
-              Submit Your Notes
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </div>
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://drive.google.com/drive/folders/1IMh4elb-RYv5M8GpQrJaVQZLZyI2w4uY"
+                className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-full
+                          bg-gradient-to-r from-blue-600 to-indigo-600 
+                          text-white font-medium text-lg
+                          transition-all duration-300"
+              >
+                Submit Your Notes
+                <FiArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
+              </motion.a>
 
-          {/* Enhanced Illustration Column */}
-          <div className="flex justify-center lg:justify-end">
-            <svg
-              viewBox="0 0 600 500"
-              className="w-full max-w-lg xl:max-w-xl transform transition-transform duration-700 hover:scale-105"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                {/* Enhanced Gradients */}
-                <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3182CE" stopOpacity="0.2" />
-                  <stop offset="50%" stopColor="#2B6CB0" stopOpacity="0.1" />
-                  <stop offset="100%" stopColor="#2C5282" stopOpacity="0.2" />
-                </linearGradient>
-                
-                <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#4299E1" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#2B6CB0" stopOpacity="0" />
-                </radialGradient>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="#explore"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full
+                          bg-white/5 hover:bg-white/10 backdrop-blur-sm
+                          text-white font-medium
+                          border border-white/10 hover:border-white/20
+                          transition-all duration-300"
+              >
+                Explore Resources
+              </motion.a>
+            </div>
+          </motion.div>
 
-                {/* Geometric Pattern */}
-                <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#4299E1" strokeWidth="0.5" opacity="0.2" />
-                </pattern>
-              </defs>
+          {/* Animated Science & Math Illustration Column */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="relative h-[600px]"
+          >
+            {/* Math Symbols */}
+            {mathSymbols.map((symbol, i) => (
+              <motion.div
+                key={`math-${i}`}
+                className="absolute font-serif text-2xl text-blue-400/40"
+                style={{
+                  top: `${Math.random() * 80}%`,
+                  left: `${Math.random() * 80}%`,
+                }}
+                animate={{
+                  y: [0, -20, 0],
+                  opacity: [0.4, 1, 0.4],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 3 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 2,
+                }}
+              >
+                {symbol}
+              </motion.div>
+            ))}
 
-              {/* Background Elements */}
-              <rect x="0" y="0" width="600" height="500" fill="url(#grid)" />
-              <circle cx="300" cy="250" r="200" fill="url(#glowGradient)">
-                <animate attributeName="opacity" values="0.6;0.8;0.6" dur="4s" repeatCount="indefinite" />
-              </circle>
+            {/* Chemistry Molecules */}
+            {chemSymbols.map((symbol, i) => (
+              <motion.div
+                key={`chem-${i}`}
+                className="absolute font-mono text-xl text-indigo-400/40"
+                style={{
+                  top: `${Math.random() * 80}%`,
+                  left: `${Math.random() * 80}%`,
+                }}
+                animate={{
+                  rotate: [0, 360],
+                  opacity: [0.4, 1, 0.4],
+                }}
+                transition={{
+                  duration: 4 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 2,
+                }}
+              >
+                {symbol}
+              </motion.div>
+            ))}
 
-              {/* Floating Geometric Shapes */}
-              <g transform="translate(300, 250)">
-                <polygon points="0,-120 104,60 -104,60" fill="none" stroke="#4299E1" strokeWidth="2" opacity="0.2">
-                  <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="0"
-                    to="360"
-                    dur="20s"
-                    repeatCount="indefinite"
-                  />
-                </polygon>
-                <rect x="-80" y="-80" width="160" height="160" fill="none" stroke="#4299E1" strokeWidth="2" opacity="0.15">
-                  <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="0"
-                    to="-360"
-                    dur="25s"
-                    repeatCount="indefinite"
-                  />
-                </rect>
-              </g>
-
-              {/* Enhanced Atom */}
-              <g transform="translate(300, 250)">
-                {/* Nucleus with Pulse Effect */}
-                <circle cx="0" cy="0" r="20" fill="#3182CE">
-                  <animate attributeName="r" values="20;22;20" dur="2s" repeatCount="indefinite" />
-                  <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
-                </circle>
-                
-                {/* Dynamic Electron Orbits */}
-                {[0, 120, 240].map((angle, i) => (
-                  <g key={i}>
-                    <ellipse 
-                      cx="0" cy="0" 
-                      rx={100 + i * 30} ry={40 + i * 10}
-                      fill="none" 
-                      stroke="#4299E1" 
-                      strokeWidth="1.5"
-                      opacity="0.3"
-                      transform={`rotate(${angle})`}
-                    >
-                      <animateTransform
-                        attributeName="transform"
-                        type="rotate"
-                        from={angle.toString()}
-                        to={(angle + 360).toString()}
-                        dur={`${6 + i * 2}s`}
-                        repeatCount="indefinite"
-                      />
-                    </ellipse>
-                    <circle 
-                      cx={100 + i * 30} 
-                      cy="0" 
-                      r="6"
-                      fill="#4299E1"
-                    >
-                      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
-                      <animateTransform
-                        attributeName="transform"
-                        type="rotate"
-                        from={`${angle} 0 0`}
-                        to={`${angle + 360} 0 0`}
-                        dur={`${6 + i * 2}s`}
-                        repeatCount="indefinite"
-                      />
-                    </circle>
-                  </g>
-                ))}
-              </g>
-
-              {/* Floating Formulas with Animation */}
-              <g className="formulas" fill="#4299E1" fontFamily="serif">
-                {[
-                  { text: "E = mc²", x: 100, y: 80 },
-                  { text: "F = ma", x: 450, y: 100 },
-                  { text: "∇ × B = μ₀J", x: 120, y: 400 },
-                  { text: "PV = nRT", x: 400, y: 350 }
-                ].map((formula, i) => (
-                  <text key={i} x={formula.x} y={formula.y} fontSize="16" opacity="0.8">
-                    <animate
-                      attributeName="opacity"
-                      values="0.4;0.8;0.4"
-                      dur="4s"
-                      begin={`${i * 1}s`}
-                      repeatCount="indefinite"
-                    />
-                    {formula.text}
-                  </text>
-                ))}
-              </g>
-
-              {/* Binary Rain Effect */}
-              <g opacity="0.3">
-                {[...Array(5)].map((_, i) => (
-                  <text key={i} 
-                        x={100 + i * 100} 
-                        y="0" 
-                        fill="#4299E1" 
-                        fontSize="12" 
-                        fontFamily="monospace">
-                    <tspan>{"10110"}</tspan>
-                    <animate
-                      attributeName="y"
-                      from="-20"
-                      to="520"
-                      dur={`${8 + i * 2}s`}
-                      repeatCount="indefinite"
-                    />
-                  </text>
-                ))}
-              </g>
+            {/* Physics Wave Animation */}
+            <svg className="absolute inset-0 w-full h-full">
+              <motion.path
+                d="M 0 300 Q 150 200 300 300 Q 450 400 600 300"
+                stroke="rgba(99, 102, 241, 0.2)"
+                strokeWidth="2"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
             </svg>
-          </div>
+
+            {/* Orbital Animation */}
+            <motion.div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              animate={{
+                rotate: [0, 360],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <div className="relative w-64 h-64">
+                {/* Electron Orbits */}
+                {[0, 45, 90].map((angle, i) => (
+                  <motion.div
+                    key={`orbit-${i}`}
+                    className="absolute inset-0"
+                    style={{
+                      transform: `rotate(${angle}deg)`,
+                      border: '2px solid rgba(99, 102, 241, 0.2)',
+                      borderRadius: '100%',
+                    }}
+                  >
+                    <motion.div
+                      className="absolute w-4 h-4 bg-blue-400/40 rounded-full"
+                      animate={{
+                        rotate: [0, 360],
+                      }}
+                      transition={{
+                        duration: 3 + i,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      style={{
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                      }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
