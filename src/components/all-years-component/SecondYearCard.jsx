@@ -109,12 +109,8 @@ export const SecondYearCard = () => {
   const displayedNotes = showAll ? notes : notes.slice(0, 7);
 
   return (
-    <div className="flex flex-col bg-zinc-950 p-6 shadow-xl rounded-xl border border-zinc-800/50">
-      <div className="flex items-center gap-2 mb-6">
-        <h2 className="text-xl font-semibold text-gray-200 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-          Second Year Notes
-        </h2>
-      </div>
+    <div className="flex flex-col bg-zinc-950 p-6 shadow-xl rounded-xl border border-zinc-800/50 ">
+     
 
       <Select onValueChange={setSelectedBranch}>
         <SelectTrigger className="w-[180px] bg-black/50 text-gray-200 border-zinc-800 hover:bg-zinc-900 mb-4 backdrop-blur-sm transition-all duration-300 hover:border-blue-500/50">

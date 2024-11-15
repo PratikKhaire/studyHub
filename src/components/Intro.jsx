@@ -8,14 +8,14 @@ export const Intro = () => {
   const chemSymbols = ["H₂O", "CO₂", "NaCl", "O₂", "H⁺", "OH⁻", "CH₄"];
   
   return (
-    <section className="min-h-screen bg-gradient-to-b from-black via-black/95 to-blue-950/20 text-indigo-200 px-4 sm:px-6 lg:px-8 flex items-center relative overflow-hidden">
+    <section className=" bg-gradient-to-b from-black via-black/95 to-blue-950/20 text-indigo-200 px-4 sm:px-6 lg:px-8 flex items-center relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-[500px] h-[500px] -top-48 -right-48 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute w-[400px] h-[400px] -bottom-32 -left-32 bg-indigo-500/10 rounded-full blur-3xl animate-pulse" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full py-12 sm:py-16 lg:py-20 relative z-10">
+      <div className="max-w-7xl mx-auto w-full py-6 lg:pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           {/* Content Column */}
           <motion.div 
@@ -58,7 +58,7 @@ export const Intro = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="text-lg sm:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+                className="text-sm lg:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed"
               >
                 Access comprehensive semester notes, study materials, books, previous year questions, and curated lecture links - all in one place.
               </motion.p>
@@ -98,7 +98,7 @@ export const Intro = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="relative h-[600px]"
+            className="lg:relative lg:h-[600px] absolute inset-0 opacity-20 lg:opacity-100 pointer-events-none"
           >
             {/* Math Symbols */}
             {mathSymbols.map((symbol, i) => (

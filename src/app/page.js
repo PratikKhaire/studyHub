@@ -10,7 +10,7 @@ import { NavBar } from "@/components/NavBar";
 
 export default function Home() {
   return (
-    <div className=" min-h-screen bg-black flex flex-col font-poppins px-4 lg:px-28"> 
+    <div className=" min-h-screen bg-black flex flex-col font-poppins  "> 
       <NavBar/>
       <Intro />
       <FirstYear id="first-year" />
