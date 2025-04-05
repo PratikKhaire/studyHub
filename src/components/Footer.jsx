@@ -66,12 +66,12 @@ export const Footer = () => {
               <p className="text-sm">
                 Made with <FaHeart className="inline text-red-500 mx-1" /> by{" "}
                 <a
-                  href="https://shridmishra.vercel.app/"
+                  href="https://github.com/PratikKhaire"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-bold text-blue-400 hover:text-white transition-colors duration-300"
                 >
-                  Shrid Mishra
+                  Pratik Khaire
                 </a>
               </p>
             </div>
