@@ -32,7 +32,7 @@ export const Footer = () => {
             <div className="flex flex-col items-center md:items-start">
               <p className="text-lg font-medium mb-2">Connect With Us</p>
               <div className="flex gap-6">
-                <a
+                {/* <a
                   href="https://www.instagram.com/shridmishra"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -58,7 +58,7 @@ export const Footer = () => {
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin className="h-6 w-6" />
-                </a>
+                </a> */}
               </div>
             </div>
 
